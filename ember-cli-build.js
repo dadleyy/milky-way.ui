@@ -4,6 +4,11 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
+    fingerprint: {
+      exclude: [
+        'web-workers',
+      ],
+    },
     sassOptions: {
       extension: 'sass',
       includePaths: [
