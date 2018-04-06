@@ -1,0 +1,31 @@
+@import "reset"
+
+html, body
+  background: #191919;
+  height: 100%
+  width: 100%
+  min-height: 100%
+  min-width: 100%
+  position: relative
+
+body > .ember-view
+  position: relative
+  min-height: 100%
+  min-width: 100%
+
+.margin-auto
+  margin: auto
+
+@for $i from 0 through 101
+  .vw-#{$i}
+    width: $i + unquote("vw")
+
+  .vh-#{$i}
+    height: $i + unquote("vh")
+
+
+.position-absolute
+  position: absolute
+
+@import "components/loaders/spin_box"
+@import "components/astronaut"

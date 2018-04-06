@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('not-found', { path: '/*' });
+  this.route('galaxies');
 });
 
 export default Router;
