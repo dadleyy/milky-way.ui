@@ -15,7 +15,7 @@ export default Route.extend({
     try {
       await workers.load('serializers/galaxies');
     } catch (e) {
-      console.error(e);
+      this.debug('errored while loading web worker: %s', e.message);
     }
 
     try {
@@ -24,7 +24,7 @@ export default Route.extend({
       const result = await ajax.request('galaxies', { headers });
       this.debug('result: %o', result);
     } catch (e) {
-      console.error('bad boy', e);
+      this.debug('errored while loading galaxies: %s', e.message);
     }
 
     this.debug('finished loading galaxies, %d', Date.now());
